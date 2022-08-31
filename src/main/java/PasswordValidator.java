@@ -33,4 +33,7 @@ public class PasswordValidator {
         return containsUppercase;
     }
 
+    public static boolean lowerCaseLetter(String str) {
+        return false;
+    }
 }

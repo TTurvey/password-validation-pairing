@@ -23,7 +23,12 @@ class PasswordValidatorTest {
 
     @Test
     void test_for_containing_a_capital_letter() {
-        assertTrue( new PasswordValidator().capitalLetter("Aa") );
+        assertTrue( new PasswordValidator().capitalLetter("A") );
+    }
+
+    @Test
+    void test_for_containing_a_lowercase_letter() {
+        assertTrue( new PasswordValidator().lowerCaseLetter("a") );
     }
 
 
