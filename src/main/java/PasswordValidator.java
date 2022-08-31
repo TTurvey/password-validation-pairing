@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Arrays;
 
 public class PasswordValidator {
@@ -8,8 +9,13 @@ public class PasswordValidator {
 
     public PasswordValidator(String str) {
         this.str = str;
-        this.charArray = Arrays.asList(str.toCharArray())
+        this.charArray = new ArrayList<Character>();
+    }
 
+    public void populateCharArray() {
+        for (int i = 0; i < this.str.length(); i++) {
+            charArray.add(str.charAt(i));
+        }
     }
 
     public Boolean validate() {
@@ -28,9 +34,7 @@ public class PasswordValidator {
     }
 
     public boolean capitalLetter() {
-        addCharacterstoArrayList();
-        System.out.println(this.charArray);
-//        char[] charArray = str.toCharArray();
+        populateCharArray();
 
         boolean containsUppercase = false;
         for(int i = 0; i < this.charArray.size(); i++){
@@ -41,9 +45,19 @@ public class PasswordValidator {
         return containsUppercase;
     }
 
-//    public static boolean lowerCaseLetter(String str) {
-//        char[] charArray =
-//
-//        return false;
-//    }
+    public boolean lowerCaseLetter() {
+        populateCharArray();
+
+        boolean containsLowercase = false;
+        for(int i = 0; i < this.charArray.size(); i++){
+            if (Character.isLowerCase(this.charArray.get(i)) == true) {
+                containsLowercase = true;
+            }
+        }
+        return containsLowercase;
+    }
+
+    public boolean containsNumber() {
+        return false;
+    }
 }

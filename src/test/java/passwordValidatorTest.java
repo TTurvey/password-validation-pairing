@@ -26,10 +26,15 @@ class PasswordValidatorTest {
         assertTrue( new PasswordValidator("A").capitalLetter() );
     }
 
-//    @Test
-//    void test_for_containing_a_lowercase_letter() {
-//        assertTrue( new PasswordValidator().lowerCaseLetter("a") );
-//    }
+    @Test
+    void test_for_containing_a_lowercase_letter() {
+        assertTrue( new PasswordValidator("a").lowerCaseLetter() );
+    }
+
+    @Test
+    void test_for_containing_a_number() {
+        assertTrue( new PasswordValidator("1").containsNumber() );
+    }
 
 
 
