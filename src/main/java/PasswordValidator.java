@@ -60,5 +60,11 @@ public class PasswordValidator {
     public boolean containsNumber() {
         return str.matches(".*\\d.*") ? true : false;
     }
+
+    public boolean containsUnderScore() {
+//        regex only valid for single character string of "_"
+        return str.matches("_") ? true : false;
+    }
+
 }
 

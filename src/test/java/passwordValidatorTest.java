@@ -38,7 +38,8 @@ class PasswordValidatorTest {
 
     @Test
     void test_for_containing_an_underscore() {
-        assertTrue( new PasswordValidator("_").containsNumber() );
+        //        test only passes with "_"
+        assertTrue( new PasswordValidator("_").containsUnderScore() );
     }
 
 
