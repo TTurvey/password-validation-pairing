@@ -62,8 +62,7 @@ public class PasswordValidator {
     }
 
     public boolean containsUnderScore() {
-//        regex only valid for single character string of "_"
-        return str.matches("_") ? true : false;
+        return str.matches("^[a-zA-Z0-9_]*$") ? true : false;
     }
 
 }
