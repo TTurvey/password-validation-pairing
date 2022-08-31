@@ -58,6 +58,7 @@ public class PasswordValidator {
     }
 
     public boolean containsNumber() {
-        return false;
+        return str.matches(".*\\d.*") ? true : false;
     }
 }
+
