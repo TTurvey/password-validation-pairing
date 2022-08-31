@@ -1,39 +1,49 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class PasswordValidator {
 
-    public Boolean validate(String str) {
-        System.out.println("".length());
+    private final String str;
+    private final ArrayList<Character> charArray;
 
+    public PasswordValidator(String str) {
+        this.str = str;
+        this.charArray = Arrays.asList(str.toCharArray())
+
+    }
+
+    public Boolean validate() {
         if (str == "") {
             return false;
         }
-
-        if (moreThanEight(str) == false) {
+        if (moreThanEight() == false) {
             return false;
         }
-
         return false;
 
     }
 
-    public static boolean moreThanEight(String str) {
-        return 8 < str.length() ? true : false;
+    public boolean moreThanEight() {
+        return 8 < this.str.length() ? true : false;
     }
 
-    public static boolean capitalLetter(String str) {
-        String[] stringArray = str.split("");
-        char[] charArray = str.toCharArray();
+    public boolean capitalLetter() {
+        addCharacterstoArrayList();
+        System.out.println(this.charArray);
+//        char[] charArray = str.toCharArray();
 
         boolean containsUppercase = false;
-
-        for(int i = 0; i < charArray.length; i++){
-            if (Character.isUpperCase(charArray[i]) == true) {
+        for(int i = 0; i < this.charArray.size(); i++){
+            if (Character.isUpperCase(this.charArray.get(i)) == true) {
                 containsUppercase = true;
             }
         }
         return containsUppercase;
     }
 
-    public static boolean lowerCaseLetter(String str) {
-        return false;
-    }
+//    public static boolean lowerCaseLetter(String str) {
+//        char[] charArray =
+//
+//        return false;
+//    }
 }
